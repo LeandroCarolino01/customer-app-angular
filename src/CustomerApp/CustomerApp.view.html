@@ -3,7 +3,19 @@ Customer name: <input [(ngModel)]="CustomerModel.CustomerName" type="text"><br>
 Customer amount: <input [(ngModel)]="CustomerModel.CustomerAmount" type="text" ><br>
 <input type="text">
 
-<input type="button" value="add"><br>
+<input (click)="add()" type="button" value="add"><br>
 {{CustomerModel.CustomerCode}} <br>
 {{CustomerModel.CustomerName}} <br>
 {{CustomerModel.CustomerAmount}} <br>
+<table>
+    <tr>
+        <td>Customer code</td>
+        <td>Customer name</td>
+        <td>Customer amount</td>
+    </tr>
+    <tr *ngFor="let cust of CustomerModels">
+        <td>{{cust.CustomerCode}}</td>
+        <td>{{cust.CustomerName}}</td>
+        <td>{{cust.CustomerAmount}}</td>
+    </tr>
+</table>
